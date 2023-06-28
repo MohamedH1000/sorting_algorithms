@@ -2,8 +2,8 @@
 /**
 *swap - in a doubly linked list a
 * two nodes to be swapped
-*@a: first node address
-*@b: second node address
+*@i: first node address
+*@j: second node address
 *Return: Nothing
 */
 void swap(listint_t *i, listint_t *j)
@@ -67,9 +67,7 @@ for (a = 0; length; a++)
 length = length->next;
 }
 if (a < 2)
-{
-return;
-}
+	return;
 h = *list;
 while (b < a)
 {
@@ -81,9 +79,7 @@ if (h->n > h->next->n)
 swap(h, h->next);
 tabdel++;
 if (h->prev->prev == NULL)
-{
-*list = h->prev;
-}
+	*list = h->prev;
 print_list(*list);
 }
 else
