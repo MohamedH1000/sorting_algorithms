@@ -34,10 +34,8 @@ int *arr2, *nArr;
 if (!array || size < 2)
 	return;
 for (a = 0; a < size; a++)
-{
-if (array[a] > z)
-	z = array[a];
-}
+	if (array[a] > z)
+		z = array[a];
 arr2 = malloc(sizeof(int) * (z + 1));
 if (!arr2)
 	return;
@@ -55,8 +53,10 @@ r++;
 print_array(arr2, (z + 1));
 nArr = malloc(sizeof(int) * size);
 if (!nArr)
-	free(arr2);
-	return;
+{
+free(arr2);
+return;
+}
 for (a = 0; a < size; a++)
 {
 nArr[arr2[array[a]]-- - 1] = array[a];
